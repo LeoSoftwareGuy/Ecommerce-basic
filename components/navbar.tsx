@@ -2,6 +2,9 @@ import Container from "@/components/ui/container";
 import Link from "next/link";
 import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";
+import NavbarActions from "./navbar-actions";
+
+export const revalidate = 0; // categories are never cached, meaning it will get call every time.
 
 const Navbar = async () => {
   const categories = await getCategories();
@@ -13,6 +16,7 @@ const Navbar = async () => {
             <p className="font-bold text-xl">Store</p>
           </Link>
           <MainNav data={categories} />
+          <NavbarActions />
         </div>
       </Container>
     </div>
