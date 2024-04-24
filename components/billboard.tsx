@@ -1,3 +1,5 @@
+"use client";
+
 import { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
